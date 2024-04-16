@@ -20,8 +20,7 @@ return {
           -- tables with the `name` key will be registered with which-key if it's installed
           -- this is useful for naming menus
           ["<Leader>b"] = { name = "Buffers" },
-          -- quick save
-          -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
           -- toggle term
           ["<C-\\>"] = { '<Cmd>execute v:count . "ToggleTerm size=10 direction=horizontal"<CR>', desc = "Toggle terminal" },
 
@@ -46,6 +45,19 @@ return {
           ["<Leader>  "] = { "<cmd>HopLine<cr>", desc = "up-down" },
           ["<Leader> 1"] = { "<cmd>HopChar1<cr>", desc = "char1" },
           ["<Leader> 2"] = { "<cmd>HopChar2<cr>", desc = "char2" },
+
+          -- nvimtree
+          ["<Leader>e"] = { "<cmd>NvimTreeToggle<CR>", desc = "Explorer" },
+
+          -- disable keymappings
+          ["<Leader>/"] = false,
+          ["<Leader>C"] = false,
+          ["<Leader>c"] = false,
+          ["<Leader>q"] = false,
+          ["<Leader>Q"] = false,
+
+          -- quick save
+          -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         },
         t = {
           -- setting a mapping to false will disable it
