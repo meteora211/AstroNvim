@@ -13,5 +13,16 @@ return {
       -- require telescope and load extensions as necessary
       require("telescope").load_extension("projects")
     end,
+
+    opts = function(plugin, opts)
+      opts.pickers = {
+        oldfiles = {
+          -- previewer = false,
+          file_ignore_patterns = {
+            "*fugitiveblame",
+          },
+        },
+      }
+    end,
   },
 }
