@@ -32,9 +32,10 @@ return {
       prefer_startup_root = false,
       sync_root_with_cwd = true,
       reload_on_bufenter = false,
-      respect_buf_cwd = false,
       on_attach = "default",
       select_prompts = false,
+      update_cwd = true,
+      respect_buf_cwd = true,
       view = {
         adaptive_size = false,
         centralize_selection = true,
@@ -92,6 +93,7 @@ return {
         debounce_delay = 15,
         update_root = true,
         ignore_list = {},
+        update_cwd = true,
       },
       filters = {
         dotfiles = false,
