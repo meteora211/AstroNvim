@@ -48,6 +48,19 @@ return {
 
           -- nvimtree
           ["<Leader>e"] = { "<cmd>NvimTreeToggle<CR>", desc = "Explorer" },
+          ["<Leader>o"] = {
+            function ()
+	            local nvimTree=require("nvim-tree.api")
+	            local currentBuf = vim.api.nvim_get_current_buf()
+	            local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
+	            if currentBufFt == "NvimTree" then
+		            nvimTree.tree.toggle()
+	            else
+		            nvimTree.tree.focus()
+	            end
+            end,
+            desc = "Toggle Explorer Focus",
+          },
 
           -- disable keymappings
           ["<Leader>/"] = false,
