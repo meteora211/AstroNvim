@@ -74,6 +74,14 @@ return {
 
           -- fugitive mapping
           ["<Leader>gb"] = {"<cmd>Git blame<cr>", desc = "fugitive blame"},
+
+          -- search setting
+          ["n"] = { "nzz", desc = "next" },
+          ["N"] = { "Nzz", desc = "next" },
+          ["*"] = { "*zz", desc = "next" },
+          ["#"] = { "#zz", desc = "next" },
+          ["g*"] = { "g*zz", desc = "next" },
+          ["g#"] = { "g#zz", desc = "next" },
         },
         t = {
           -- setting a mapping to false will disable it

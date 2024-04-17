@@ -22,3 +22,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
 	command = "if mode() != 'c' | checktime | endif",
 	pattern = { "*" },
 })
+
+-- I don't like the auto hlsearch
+vim.on_key(nil, vim.api.nvim_get_namespaces()["auto_hlsearch"])
