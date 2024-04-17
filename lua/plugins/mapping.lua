@@ -80,6 +80,11 @@ return {
           -- ["<esc>"] = false,
           ["<C-\\>"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal" }
         },
+        v = {
+          [">"] = { ">gv", desc = "Keep indent"},
+          ["<"] = { "<gv", desc = "Keep indent"},
+
+        },
       },
     },
   },
