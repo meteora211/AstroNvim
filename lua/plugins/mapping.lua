@@ -24,6 +24,12 @@ return {
           -- toggle term
           ["<C-\\>"] = { '<Cmd>execute v:count . "ToggleTerm size=10 direction=horizontal"<CR>', desc = "Toggle terminal" },
 
+          -- findings
+          ["<Leader>fa"] = false,
+          ["<Leader>fm"] = false,
+          ["<Leader>fo"] = false,
+          ["<Leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "projects"},
+
           -- telescope findings
           ["<Leader>fr"] = { function() require('telescope.builtin').oldfiles() end, desc = "Recent files"},
           ["<Leader>fc"] = { function() require("telescope.builtin").colorscheme { enable_preview = true } end, desc = "Find themes"},
