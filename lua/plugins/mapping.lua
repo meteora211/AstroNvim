@@ -48,7 +48,7 @@ return {
 
           -- nvimtree
           ["<Leader>e"] = { "<cmd>NvimTreeToggle<CR>", desc = "Explorer" },
-          ["<Leader>o"] = {
+          ["<Leader>w"] = {
             function ()
 	            local nvimTree=require("nvim-tree.api")
 	            local currentBuf = vim.api.nvim_get_current_buf()
@@ -68,6 +68,9 @@ return {
           ["<Leader>c"] = false,
           ["<Leader>q"] = false,
           ["<Leader>Q"] = false,
+
+          -- outline
+          ["<Leader>o"] = { "<cmd>AerialToggle<CR>", desc = "Outline" },
 
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
@@ -117,6 +120,8 @@ return {
             desc = "Declaration of current symbol",
             cond = "textDocument/declaration",
           },
+          -- lsp
+          ["<Leader>li"] = {"<cmd>LspInfo<cr>", desc = "LspInfo"},
         },
       },
     },
