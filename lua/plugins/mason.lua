@@ -1,33 +1,4 @@
 -- ---@type LazySpec
--- return {
---   -- use mason-lspconfig to configure LSP installations
---   {
---     "williamboman/mason-lspconfig.nvim",
---     -- overrides `require("mason-lspconfig").setup(...)`
---     opts = function(_, opts)
---       -- add more things to the ensure_installed table protecting against community packs modifying it
---       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
---         "lua_ls",
---         "pyright",
---         "clangd",
---       })
---     end,
---   },
--- }
--- Add additional capabilities supported by nvim-cmp
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-local lspconfig = require "lspconfig"
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { "clangd", "pyright" }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
-end
-
 return {
   {
     "AstroNvim/astrolsp",
@@ -116,23 +87,6 @@ return {
     end,
   },
   {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = {
-      {
-        "AstroNvim/astrocore",
-        opts = {
-          mappings = {
-            n = {
-              ["<Leader>lv"] = { "<Cmd>VenvSelect<CR>", desc = "Select VirtualEnv" },
-            },
-          },
-        },
-      },
-    },
-    opts = {},
-    cmd = { "VenvSelect", "VenvSelectCached" },
-  },
-  {
     "mfussenegger/nvim-dap-python",
     dependencies = "mfussenegger/nvim-dap",
     ft = "python", -- NOTE: ft: lazy-load on filetype
@@ -146,6 +100,7 @@ return {
       require("dap-python").setup(path, opts)
     end,
   },
+
   {
     "nvim-neotest/neotest",
     optional = true,
@@ -155,13 +110,30 @@ return {
       table.insert(opts.adapters, require "neotest-python" (require("astrocore").plugin_opts "neotest-python"))
     end,
   },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        python = { "isort", "black" },
-      },
-    },
-  },
+  -- {
+  --   "stevearc/conform.nvim",
+  --   optional = true,
+  --   opts = {
+  --     formatters_by_ft = {
+  --       python = { "isort", "black" },
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "linux-cultist/venv-selector.nvim",
+  --   dependencies = {
+  --     {
+  --       "AstroNvim/astrocore",
+  --       opts = {
+  --         mappings = {
+  --           n = {
+  --             ["<Leader>lv"] = { "<Cmd>VenvSelect<CR>", desc = "Select VirtualEnv" },
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  --   opts = {},
+  --   cmd = { "VenvSelect", "VenvSelectCached" },
+  -- },
 }
