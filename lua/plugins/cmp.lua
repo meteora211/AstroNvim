@@ -5,7 +5,6 @@ end
 
 vim.opt.pumblend = 10
 
-
 return {
   {
     "hrsh7th/nvim-cmp",
@@ -17,9 +16,7 @@ return {
 
       opts.enabled = function()
         local buftype = vim.api.nvim_buf_get_option(0, "buftype")
-        if buftype == "prompt" then
-          return false
-        end
+        if buftype == "prompt" then return false end
         return true
       end
 
@@ -112,13 +109,14 @@ return {
       opts.sources = {
         {
           name = "nvim_lsp",
-          entry_filter = function(entry, ctx)
-            local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
-            if kind == "Snippet" and ctx.prev_context.filetype == "java" then
-              return false
-            end
-            return true
-          end,
+          priority = 1000,
+          -- entry_filter = function(entry, ctx)
+          --   local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
+          --   if kind == "Snippet" and ctx.prev_context.filetype == "java" then
+          --     return false
+          --   end
+          --   return true
+          -- end,
         },
 
         { name = "path" },
