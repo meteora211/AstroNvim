@@ -84,6 +84,9 @@ return {
           -- fugitive mapping
           ["<Leader>gb"] = {"<cmd>Git blame<cr>", desc = "fugitive blame"},
 
+          -- undotree
+          ["<Leader>uu"] = {"<cmd>Telescope undo<cr>", desc = "Undo"},
+
           -- search setting
           ["n"] = { "nzz", desc = "next" },
           ["N"] = { "Nzz", desc = "next" },
