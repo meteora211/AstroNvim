@@ -60,7 +60,7 @@ return {
 	            local currentBuf = vim.api.nvim_get_current_buf()
 	            local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
 	            if currentBufFt == "NvimTree" then
-		            nvimTree.tree.toggle()
+	              vim.cmd.wincmd "p"
 	            else
 		            nvimTree.tree.focus()
 	            end
