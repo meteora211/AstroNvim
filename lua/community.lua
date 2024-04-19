@@ -13,7 +13,7 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.cpp" },
   -- completion
-  -- { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.completion.codeium-vim" },
   -- { import = "astrocommunity.completion.tabnine-nvim" },
   -- import/override with your plugins folder
 }

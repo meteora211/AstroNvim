@@ -15,11 +15,24 @@ return {
         end
       },
       keymap = {
-        fzf = {
-          -- Copy the default binds and add these below
-          ["ctrl-j"] = "down",
-          ["ctrl-k"] = "up",
+        builtin = {
+          ["<F1>"] = "toggle-help",
+          ["<C-j>"] = "down",
+          ["<C-k>"] = "up",
+          ["<C-n>"] = "preview-page-down",
+          ["<C-p>"] = "preview-page-up",
         },
+        -- fzf = {
+        --   -- fzf style keybinding, use man fzf to check more bindings
+        --   ["ctrl-j"] = "down",
+        --   ["ctrl-k"] = "up",
+        --   ["ctrl-d"] = "page-down",
+        --   ["ctrl-u"] = "page-up",
+        --   ["ctrl-n"] = "preview-down",
+        --   ["ctrl-p"] = "preview-up",
+        --   -- ["ctrl-l"] = "preview-page-down",
+        --   -- ["ctrl-h"] = "preview-page-up",
+        -- },
       },
     })
   end
