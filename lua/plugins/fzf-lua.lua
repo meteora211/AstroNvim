@@ -21,18 +21,20 @@ return {
           ["<C-k>"] = "up",
           ["<C-n>"] = "preview-page-down",
           ["<C-p>"] = "preview-page-up",
+          -- ["<C-d>"] = "page-down",
+          -- ["<C-u>"] = "page-up",
         },
-        -- fzf = {
-        --   -- fzf style keybinding, use man fzf to check more bindings
-        --   ["ctrl-j"] = "down",
-        --   ["ctrl-k"] = "up",
-        --   ["ctrl-d"] = "page-down",
-        --   ["ctrl-u"] = "page-up",
-        --   ["ctrl-n"] = "preview-down",
-        --   ["ctrl-p"] = "preview-up",
-        --   -- ["ctrl-l"] = "preview-page-down",
-        --   -- ["ctrl-h"] = "preview-page-up",
-        -- },
+        fzf = {
+          -- fzf style keybinding, use man fzf to check more bindings
+          ["ctrl-j"] = "down",
+          ["ctrl-k"] = "up",
+          ["ctrl-d"] = "page-down",
+          ["ctrl-u"] = "page-up",
+          -- ["ctrl-n"] = "preview-down",
+          -- ["ctrl-p"] = "preview-up",
+          -- ["ctrl-l"] = "preview-page-down",
+          -- ["ctrl-h"] = "preview-page-up",
+        },
       },
     })
   end

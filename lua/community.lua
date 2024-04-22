@@ -11,7 +11,7 @@ return {
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   -- languages
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.cpp" },
+  -- { import = "astrocommunity.pack.cpp" },
   -- completion
   { import = "astrocommunity.completion.codeium-vim" },
   -- { import = "astrocommunity.completion.tabnine-nvim" },
