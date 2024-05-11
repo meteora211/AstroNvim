@@ -54,7 +54,7 @@ return {
 
           -- nvimtree
           ["<Leader>e"] = { "<cmd>NvimTreeToggle<CR>", desc = "Explorer" },
-          ["<Leader>w"] = {
+          ["<Leader>q"] = {
             function ()
 	            local nvimTree=require("nvim-tree.api")
 	            local currentBuf = vim.api.nvim_get_current_buf()
@@ -74,12 +74,26 @@ return {
           ["<Leader>c"] = false,
           ["<Leader>q"] = false,
           ["<Leader>Q"] = false,
+          ["<Leader>S"] = false,
+          ["<Leader>Sl"] = false,
+          ["<Leader>Ss"] = false,
+          ["<Leader>SS"] = false,
+          ["<Leader>St"] = false,
+          ["<Leader>Sd"] = false,
+          ["<Leader>SD"] = false,
+          ["<Leader>Sf"] = false,
+          ["<Leader>SF"] = false,
+          ["<Leader>S."] = false,
 
           -- outline
           ["<Leader>o"] = { "<cmd>AerialToggle<CR>", desc = "Outline" },
 
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+          -- windows
+          ["<Leader>w"] = { name = "Windows" },
+          ["<Leader>w,"] = { "<cmd>vertical resize -999<cr>", desc = "minimize vertical window" },  -- change description but the same command
+          ["<Leader>w."] = { "<cmd>vertical resize +999<cr>", desc = "maximize vertical window" },  -- change description but the same command
 
           -- fugitive mapping
           ["<Leader>gb"] = {"<cmd>Git blame<cr>", desc = "fugitive blame"},

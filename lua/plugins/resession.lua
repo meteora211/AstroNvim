@@ -6,7 +6,9 @@ return {
       "AstroNvim/astrocore",
       opts = function(_, opts)
         local maps = opts.mappings
-        maps.n["<Leader>s"] = vim.tbl_get(opts, "_map_sections", "s")
+        -- replace <leader>S by <leader>s
+        local get_icon = require("astroui").get_icon
+        maps.n["<Leader>s"] = { desc = get_icon("Refresh", 1, true) .. "Last Session"}
         maps.n["<Leader>sl"] = { function() require("resession").load "Last Session" end, desc = "Load last session" }
         maps.n["<Leader>ss"] = { function() require("resession").save() end, desc = "Save this session" }
         maps.n["<Leader>sS"] = {
