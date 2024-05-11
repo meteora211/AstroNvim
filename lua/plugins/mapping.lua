@@ -92,8 +92,9 @@ return {
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
           -- windows
           ["<Leader>w"] = { name = "Windows" },
-          ["<Leader>w,"] = { "<cmd>vertical resize -999<cr>", desc = "minimize vertical window" },  -- change description but the same command
-          ["<Leader>w."] = { "<cmd>vertical resize +999<cr>", desc = "maximize vertical window" },  -- change description but the same command
+          -- little finger lives matter!
+          ["<Leader>w,"] = { "<cmd>vertical resize -999<cr>", desc = "minimize vertical window" },
+          ["<Leader>w."] = { "<cmd>vertical resize +999<cr>", desc = "maximize vertical window" },
 
           -- fugitive mapping
           ["<Leader>gb"] = {"<cmd>Git blame<cr>", desc = "fugitive blame"},
