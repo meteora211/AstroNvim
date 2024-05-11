@@ -95,6 +95,9 @@ return {
           -- little finger lives matter!
           ["<Leader>w,"] = { "<cmd>vertical resize -999<cr>", desc = "minimize vertical window" },
           ["<Leader>w."] = { "<cmd>vertical resize +999<cr>", desc = "maximize vertical window" },
+          ["<Leader>w="] = { "<C-w>=", desc = "equal windows" },
+          ["<Leader>w|"] = { "<C-w>|", desc = "max vertical window" }, -- same with <Leader>w.
+          ["<Leader>wh"] = { "<cmd>hide<cr>", desc = "hide window" },
 
           -- fugitive mapping
           ["<Leader>gb"] = {"<cmd>Git blame<cr>", desc = "fugitive blame"},
