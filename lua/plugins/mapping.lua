@@ -97,7 +97,10 @@ return {
           ["<Leader>w."] = { "<cmd>vertical resize +999<cr>", desc = "maximize vertical window" },
           ["<Leader>w="] = { "<C-w>=", desc = "equal windows" },
           ["<Leader>w|"] = { "<C-w>|", desc = "max vertical window" }, -- same with <Leader>w.
-          ["<Leader>wh"] = { "<cmd>hide<cr>", desc = "hide window" },
+          ["<Leader>wh"] = { "<cmd>hide<cr>", desc = "hide current window" },
+          -- TODO: use hide
+          ["<Leader>wo"] = { "<cmd>only<cr>", desc = "make current window only window" },
+          ["<Leader>wt"] = { "<cmd>WindowsToggleAutowidth<cr>", desc = "toggle windows auto size" },
 
           -- fugitive mapping
           ["<Leader>gb"] = {"<cmd>Git blame<cr>", desc = "fugitive blame"},
