@@ -33,13 +33,14 @@ return {
           -- telescope findings
           ["<Leader>fr"] = { function() require('telescope.builtin').oldfiles() end, desc = "Recent files"},
           ["<Leader>fc"] = { function() require("telescope.builtin").colorscheme { enable_preview = true } end, desc = "Find themes"},
-          -- ["<Leader>fg"] = { function() require('telescope.builtin').grep_string{search=vim.fn.expand('<cword>')} end, desc = "Grep string"},
-          -- ["<Leader>ft"] = { function() require('telescope.builtin').live_grep() end, desc = "Find text"},
 
           -- fzf findings
-          ["<Leader>ff"] = { function() require('fzf-lua').files() end, desc = "Find files"},
-          ["<Leader>fg"] = { function() require('fzf-lua').grep{search=vim.fn.expand('<cword>')} end, desc = "Grep string"},
-          ["<Leader>ft"] = { function() require('fzf-lua').live_grep() end, desc = "Find text"},
+          -- ["<Leader>ff"] = { function() require('fzf-lua').files() end, desc = "Find files"},
+          -- ["<Leader>fg"] = { function() require('fzf-lua').grep{search=vim.fn.expand('<cword>')} end, desc = "Grep string"},
+          -- ["<Leader>ft"] = { function() require('fzf-lua').live_grep() end, desc = "Find text"},
+          ["<Leader>ff"] = { function() require("telescope.builtin").find_files() end, desc = "Find files" },
+          ["<Leader>fg"] = { function() require('telescope.builtin').grep_string{search=vim.fn.expand('<cword>')} end, desc = "Grep string"},
+          ["<Leader>ft"] = { function() require('telescope.builtin').live_grep() end, desc = "Find text"},
 
           -- jumps
           ["<Leader> "] = { name = "Jumps" },
@@ -84,6 +85,7 @@ return {
           ["<Leader>Sf"] = false,
           ["<Leader>SF"] = false,
           ["<Leader>S."] = false,
+          ["<Leader>w."] = false,
 
           -- outline
           ["<Leader>o"] = { "<cmd>AerialToggle<CR>", desc = "Outline" },
@@ -91,7 +93,7 @@ return {
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
           -- windows
-          ["<Leader>w"] = { name = "Windows" },
+          -- ["<Leader>w"] = { name = "Windows" },
           -- little finger lives matter!
           ["<Leader>w,"] = { "<cmd>vertical resize -999<cr>", desc = "minimize vertical window" },
           ["<Leader>w."] = { "<cmd>vertical resize +999<cr>", desc = "maximize vertical window" },
